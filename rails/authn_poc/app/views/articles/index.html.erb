@@ -1,7 +1,10 @@
 <h1>Articles</h1>
 
 Our blog has <%= Article.public_count %> articles and counting!
-
+<!-- Place a login button anywhere on your application -->
+<%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } %>
+<!-- Place a logout button anywhere on your application -->
+<%= button_to 'Logout', 'auth/logout', method: :get, data: { turbo: false } %>
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
